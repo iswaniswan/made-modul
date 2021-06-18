@@ -43,7 +43,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             supportFragmentManager.beginTransaction()
                 .replace(R.id.nav_host_fragment, HomeFragment())
                 .commit()
-            supportActionBar?.title = getString(R.string.app_name)
+            val title = getString(R.string.app_name) + 2.0
+            supportActionBar?.title = title
         }
     }
 
