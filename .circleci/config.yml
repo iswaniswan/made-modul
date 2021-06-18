@@ -14,7 +14,7 @@ jobs:
           name: Chmod permissions
           command: sudo chmod +x ./gradlew
       - run:
-          name: Download dependecies
+          name: Download Dependencies
           command: ./gradlew androidDependencies
       - save_cache:
           key: 'android-orb-v1-{{ epoch }}'
@@ -28,10 +28,10 @@ jobs:
           path: app/build/reports
           destination: reports
       - run:
-          name: Run Test
+          name: Run Tests
           command: ./gradlew lint test
       - store_test_results:
           path: app/build/test-results
-      - store_artifacts:
+      - store_artifacts:  
           path: app/build/outputs/apk/debug/
           destination: artifact-file
